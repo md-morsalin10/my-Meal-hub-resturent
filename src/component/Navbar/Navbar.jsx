@@ -38,7 +38,7 @@ const Navbar = () => {
     const linksNav = NavLinks.map(links=> <li key={links.id}><a  href={links.path}>{links.name}</a></li>)
 
     return (
-        <div className="navbar bg-base-100 shadow-sm lg:px-10">
+        <div className="navbar bg-base-200 shadow-sm lg:px-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,15 +46,15 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-300 rounded-box z-1 mt-3 w-30 p-2 shadow">
+                        className="menu menu-sm dropdown-content font-semibold hover:text-red-500 bg-base-200 rounded-box z-1 mt-4 w-30 p-2 shadow">
                      {linksNav}
                     </ul>
                 </div>
-                <span className='ml-2'><img className='w-15 h-15 hover:border-green-500 border-3 border-red-500 rounded-[50%]' src={'fav.png'} alt="" /></span>
-                <a className="btn btn-ghost text-2xl font-bold hidden lg:flex">Meal<span className='text-red-600'>Hub</span></a>
+                <span className='ml-2'><img className='w-15 h-15 hover:border-green-500 border-2 border-red-500 rounded-[50%]' src={'fav.png'} alt="" /></span>
+                <a className="btn btn-ghost text-2xl font-extrabold hidden lg:flex">Meal<span className='text-red-600'>Hub</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 font-semibold text-red-500">
                    {linksNav}
                 </ul>
             </div>
