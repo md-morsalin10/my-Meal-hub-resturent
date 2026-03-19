@@ -4,12 +4,12 @@ import React from 'react';
 
 const AboutSection = () => {
     return (
-        <div className='w-10/12 mx-auto mt-2 pt-7'>
+        <div className='w-10/12 mx-auto my-10 pt-7'>
             <span className='text-center space-y-2'>
                 <h2 className='text-5xl font-extrabold text-[#F5274C]'>Meet The CEO</h2>
                 <h1 className='text-3xl font-extrabold text-[#000000]'>Perfect Place For An Exceptional <br /> Experience</h1>
             </span>
-            <div className='flex justify-center items-center'>
+            <div className='flex flex-col lg:flex-row justify-center items-center'>
                 <div className=''>
                     <img className='' src={'ceo.png'} alt="" />
                 </div>
