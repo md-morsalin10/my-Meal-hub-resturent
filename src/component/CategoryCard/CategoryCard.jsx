@@ -7,8 +7,6 @@ const CategoryCard = ({chineseFoodPromise}) => {
     
     return (
         <div className='grid grid-cols-4 w-10/12 mx-auto gap-6'>
-           {/* <p>name: {chineseFoodData.meals.strMeal}</p>*/}
-
            {
             chineseData.map(cdata=> <ChineseFoodData key={cdata.idMeal} cdata={cdata}></ChineseFoodData>)
            }
