@@ -7,11 +7,19 @@ import CategoryCard from './component/CategoryCard/CategoryCard'
 import HeroSection from './component/Navbar/HeroSection/HeroSection'
 import Navbar from './component/Navbar/Navbar'
 import CanadianFood from './component/CanadianFood/CanadianFood'
+import AmericanFood from './component/AmericanFood/AmericanFood'
+import ItalianFood from './component/ItalianFood/ItalianFood'
 
-const chineseFoodPromise = fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese')
+const chineseFoodPromise = () => fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese')
   .then(res => res.json())
 
 const canadianFoodPromise = fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian')
+  .then(res => res.json())
+
+const americanFoodPromise = fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=American')
+  .then(res => res.json())
+
+const italianFoodPromise = fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian')
   .then(res => res.json())
 
 function App() {
@@ -29,13 +37,33 @@ function App() {
         <Category activeCategory={activeCategory} setActiveCategory={setActiveCategory}></Category>
 
         {activeCategory === 'Chinese' && (
-          <Suspense fallback={<p>Loading...</p>}>
-            <CategoryCard chineseFoodPromise={chineseFoodPromise}></CategoryCard>
+          <Suspense fallback={<div className='flex justify-center items-center w-full py-5'>
+            <span className="loading loading-bars loading-xl text-primary"></span>
+          </div>}>
+            <CategoryCard chineseFoodPromise={chineseFoodPromise()}></CategoryCard>
           </Suspense>
         )}
         {activeCategory === 'Canadian' && (
-          <Suspense fallback={<h>Loading...</h>}>
+          <Suspense fallback={<div className='flex justify-center items-center w-full py-5'>
+            <span className="loading loading-bars loading-xl text-primary"></span>
+          </div>}>
             <CanadianFood canadianFoodPromise={canadianFoodPromise}></CanadianFood>
+          </Suspense>
+        )}
+
+        {activeCategory === 'American' && (
+          <Suspense fallback={<div className='flex justify-center items-center w-full py-5'>
+            <span className="loading loading-bars loading-xl text-primary"></span>
+          </div>}>
+            <AmericanFood americanFoodPromise={americanFoodPromise}></AmericanFood>
+          </Suspense>
+        )}
+
+        {activeCategory === 'Italian' && (
+          <Suspense fallback={<div className='flex justify-center items-center w-full py-5'>
+            <span className="loading loading-bars loading-xl text-primary"></span>
+          </div>}>
+            <ItalianFood italianFoodPromise={italianFoodPromise}></ItalianFood>
           </Suspense>
         )}
       </main>
