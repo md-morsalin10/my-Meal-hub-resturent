@@ -9,6 +9,7 @@ import Navbar from './component/Navbar/Navbar'
 import CanadianFood from './component/CanadianFood/CanadianFood'
 import AmericanFood from './component/AmericanFood/AmericanFood'
 import ItalianFood from './component/ItalianFood/ItalianFood'
+import OurServices from './component/OurServices/OurServices'
 
 const chineseFoodPromise = () => fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese')
   .then(res => res.json())
@@ -66,6 +67,8 @@ function App() {
             <ItalianFood italianFoodPromise={italianFoodPromise}></ItalianFood>
           </Suspense>
         )}
+
+        <OurServices></OurServices>
       </main>
     </div>
 
