@@ -11,6 +11,7 @@ import AmericanFood from './component/AmericanFood/AmericanFood'
 import ItalianFood from './component/ItalianFood/ItalianFood'
 import OurServices from './component/OurServices/OurServices'
 import BestSelling from './component/BestSelling/BestSelling'
+import Footer from './component/Footer/Footer'
 
 const chineseFoodPromise = () => fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese')
   .then(res => res.json())
@@ -80,6 +81,9 @@ function App() {
           <BestSelling bestSellingPromise={bestSellingPromise}></BestSelling>
         </Suspense>
       </main>
+      <footer>
+         <Footer></Footer>
+      </footer>
     </div>
 
   )
