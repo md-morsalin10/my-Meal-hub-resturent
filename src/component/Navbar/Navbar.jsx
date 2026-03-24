@@ -46,7 +46,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content font-semibold hover:text-red-500 bg-base-200 rounded-box z-1 mt-4 w-30 p-2 shadow">
+                        className="menu menu-sm dropdown-content font-semibold hover:text-slate-500 bg-base-200 rounded-box z-1 mt-4 w-30 p-2 shadow">
                      {linksNav}
                     </ul>
                 </div>
@@ -54,12 +54,12 @@ const Navbar = () => {
                 <a className="btn btn-ghost text-2xl font-extrabold hidden lg:flex">Meal<span className='text-red-600'>Hub</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 font-semibold text-red-500">
+                <ul className="menu menu-horizontal px-1 font-semibold text-slate-500">
                    {linksNav}
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-error btn-outline">Contact Us</a>
+                <a className="btn btn-primary">Contact Us</a>
             </div>
         </div>
     );
